@@ -1,3 +1,3 @@
 # 27shraddhaS.github.io
 
-![](https://27shraddhaS.github.io/ghpvc/?username=27shraddhaS&style=flat-square)
+<a href="https://hits.sh/github.com/silentsoft/hits/"><img alt="Hits" src="https://hits.sh/github.com/silentsoft/hits.svg"/></a>
