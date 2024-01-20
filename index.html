@@ -724,7 +724,7 @@
                                                 font-size: 1.125rem;
                                             }
                                         </style>
-                                        <p class="chakra-text css-11w9t2p">Software Developer</p>
+                                        <p class="chakra-text css-11w9t2p" id="animatedText">Software Developer</p>
                                         <style data-emotion="css mv4tmv">
                                             .css-mv4tmv {
                                                 -webkit-transition: all 0.15s ease-out;
@@ -747,7 +747,39 @@
                                                 box-shadow: none;
                                             }
                                         </style>
-                                        <a class="chakra-link css-mv4tmv" href="mailto: iamshraddhashekhar@gmail.com">iamshraddhashekhar@gmail.com</a>
+                                        <script>
+                                              const textElement = document.getElementById('animatedText');
+                                              const jobTitles = ['Software Developer', 'Machine Learning Engineer', 'Data Scientist'];
+                                              let charIndex = 0;
+                                              let textIndex = 0;
+                                              let isTyping = true;
+
+                                              function animateText() {
+                                                const currentText = jobTitles[textIndex];
+                                                if (isTyping) {
+                                                  textElement.textContent = currentText.substring(0, charIndex++);
+                                                  if (charIndex > currentText.length) {
+                                                    isTyping = false;
+                                                    setTimeout(animateText, 1000); // Wait for 1 second before backspacing
+                                                  } else {
+                                                    setTimeout(animateText, 100); // Typing speed (adjust as needed)
+                                                  }
+                                                } else {
+                                                  textElement.textContent = currentText.substring(0, charIndex--);
+                                                  if (charIndex === 0) {
+                                                    isTyping = true;
+                                                    textIndex = (textIndex + 1) % jobTitles.length;
+                                                    setTimeout(animateText, 500); // Wait for 0.5 seconds before typing the next text
+                                                  } else {
+                                                    setTimeout(animateText, 50); // Backspacing speed (adjust as needed)
+                                                  }
+                                                }
+                                              }
+
+                                              // Start the animation
+                                              animateText();
+                                            </script>
+<!--                                         <a class="chakra-link css-mv4tmv" href="mailto: iamshraddhashekhar@gmail.com">iamshraddhashekhar@gmail.com</a> -->
                                     </div>
                                 </li>
                             </ul>
